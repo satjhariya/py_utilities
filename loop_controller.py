@@ -13,7 +13,7 @@ class loop_cntrl:
 
         self.result = {}
 
-    def loop4(self):
+    def loop4(self,i=None,j=None,k=None):
         if self.it4 is None:
             print("loop 4 is skipped no iterator 4")
             return
@@ -24,32 +24,32 @@ class loop_cntrl:
                 "c": {"x": 10, "y": 20, "z": 30},
                 "d": {}
             }
-            print(f"Loop 4 i = {self.i}, j = {self.j}, k = {self.k}, l = {l}")
+            print(f"Loop 4 i = {i}, j = {j}, k = {k}, l = {l}")
             for key, func in func_map.items():
                 func(**arg_map[key])
                 print(arg_map[key])
-            self.result[self.i][self.j][self.k][l] = l
+            self.result[i][j][k][l] = l
             
             
-    def loop3(self):
+    def loop3(self,i=None,j=None):
         if self.it3 is None:
             print("loop 3 is skipped no iterator 3")
             return
         for k in self.it3:
-            self.result[self.i][self.j][k] = {}
+            self.result[i][j][k] = {}
             self.k = k
             print(f"Loop 3 i = {self.i}, j = {self.j}, k = {self.k}")
-            self.loop4()
+            self.loop4(i,j,k)
 
-    def loop2(self):
+    def loop2(self, i=None):
         if self.it2 is None:
             print("loop 2 is skipped no iterator 2")
             return
         for j in self.it2:
-            self.result[self.i][j] ={}
-            self.j = j
-            print(f"Loop 2 i = {self.i}, j = {self.j}")
-            self.loop3()
+            self.result[i][j] ={}
+            # self.j = j
+            print(f"Loop 2 i = {i}, j = {j}")
+            self.loop3(i,j)
 
     def loop1(self):
         if self.it1 is None:
@@ -57,9 +57,9 @@ class loop_cntrl:
             return
         for i in self.it1:
             self.result[i] = {}
-            self.i = i
-            print(f"Loop 1 i = {self.i}")
-            self.loop2()
+            # self.i = i
+            print(f"Loop 1 i = {i}")
+            self.loop2(i)
 
     def run(self):
         if self.it1 is not None and self.i is None:
@@ -78,3 +78,7 @@ if __name__ == "__main__":
     p1.run()
     print(p1.result)
     print(f"\n\n")
+
+    p2 = loop_cntrl(None,range(1),range(2),range(3))
+    p2.run()
+    print(p2.result)
