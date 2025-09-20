@@ -1,3 +1,4 @@
+from loop_functions import func_map
 class loop_cntrl:
     def __init__(self,it1=None,it2=None,it3=None,it4=None):
         self.it1 = it1
@@ -17,7 +18,16 @@ class loop_cntrl:
             print("loop 4 is skipped no iterator 4")
             return
         for l in self.it4:
+            arg_map = {
+                "a": {"x": 10 + l},
+                "b": {"x": 20 + l, "y": 30 * l},
+                "c": {"x": 10, "y": 20, "z": 30},
+                "d": {}
+            }
             print(f"Loop 4 i = {self.i}, j = {self.j}, k = {self.k}, l = {l}")
+            for key, func in func_map.items():
+                func(**arg_map[key])
+                print(arg_map[key])
             self.result[self.i][self.j][self.k][l] = l
             
             
