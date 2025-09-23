@@ -8,3 +8,4 @@ venv/
 ENV/
 _env/*
 *test*
+*data*
