@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyUtils"
+version = "0.0.0"
+description = "Small collection of python utilities (calculator, message bus, frame ops)."
+authors = [ { name = "satjhariya" } ]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+[tool.setuptools]
+# explicit py-modules (single-file modules in pyUtils/src)
+py-modules = []
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]

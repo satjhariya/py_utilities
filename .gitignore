@@ -9,3 +9,6 @@ ENV/
 _env/*
 *test*
 *data*
+build/
+dist/
+*.egg-info/

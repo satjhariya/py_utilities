@@ -1,5 +1,4 @@
-from message_bus import msgBus
-
+from pyUtils.src.message_bus import msgBus
 
 class calc:
     def __init__(self, bus: msgBus):
