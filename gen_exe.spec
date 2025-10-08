@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['test.py'],
+    ['pyUtils/src/dict_flattning.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -21,7 +21,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='test',
+    name='gen_exe',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -40,5 +40,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='test',
+    name='gen_exe',
 )
