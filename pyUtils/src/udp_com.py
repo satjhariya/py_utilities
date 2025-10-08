@@ -1,7 +1,7 @@
 import socket
 import threading
 import queue
-from frame_ops import UDPFrame as FrameStruct
+from pyUtils.src.frame_ops import UDPFrame as FrameStruct
 
 class UDPClient(threading.Thread):
     def __init__(self, server_ip, server_port, local_port=0):

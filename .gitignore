@@ -7,7 +7,7 @@ env/
 venv/
 ENV/
 _env/*
-*test*
+.venv/
 *data*
 build/
 dist/

@@ -3,16 +3,16 @@ class recurse_loop:
                 self.result = {}
                 self.data = {}
                 self.num = 0
-        def loop1(num=None):
+        def loop1(self,num=None):
                 print(f"Inside loop 1 {num}")
 
-        def loop2(num=None):
+        def loop2(self,num=None):
                 print(f"Inside loop 2 {num}")
 
-        def loop3(num=None):
+        def loop3(self,num=None):
                 print(f"Inside loop 3 {num}")
 
-        def loop4(num=None):
+        def loop4(self,num=None):
                 print(f"Inside loop 4 {num}")
 
         def run(self, loop_list:list):

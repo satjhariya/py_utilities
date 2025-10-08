@@ -1,4 +1,4 @@
-from loop_functions import func_map
+from pyUtils.src.loop_functions import func_map
 class loop_cntrl:
     def __init__(self,it1=None,it2=None,it3=None,it4=None):
         self.it1 = it1
@@ -28,7 +28,7 @@ class loop_cntrl:
             for key, func in func_map.items():
                 func(**arg_map[key])
                 print(arg_map[key])
-            self.result[i][j][k][l] = i+j+k+l
+            # self.result[i][j][k][l] = i+j+k+l
             
             
     def loop3(self,i=None,j=None):

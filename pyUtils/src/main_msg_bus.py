@@ -1,5 +1,5 @@
-from calculator import calc
-from message_bus import msgBus
+from pyUtils.src.calculator import calc
+from pyUtils.src.message_bus import msgBus
 import time
 
 
